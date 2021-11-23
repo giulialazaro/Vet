@@ -1,0 +1,22 @@
+<%= form_with(model: raca, local: true) do |form| %>
+  <% if raca.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(raca.errors.count, "error") %> prohibited this raca from being saved:</h2>
+
+      <ul>
+        <% raca.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :descricao %>
+    <%= form.text_field :descricao %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
